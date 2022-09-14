@@ -1,0 +1,6 @@
+#Don't track any of the work files
+directory.*
+extractedEmails.*
+
+#Ignore any directories and files from the builds
+/archive/

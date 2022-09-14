@@ -1,7 +1,7 @@
 import re
 fileToRead = 'directory.txt'
 fileToWrite = 'extractedEmails.txt'
-delimiterInFile = [',', ';'] 
+delimiterInFile = [',', ';']
 def validateEmail(strEmail):
     # .* Zero or more characters of any type.
     if re.match("(.*)@(.*).(.*)", strEmail):
@@ -27,6 +27,10 @@ for itemLine in listLine:
     wordList = item.split()
     for word in wordList:
         if(validateEmail(word)):
+
+            # Remove any "Households"
+            word = word.replace("Household","")
+            
             word = word + str(";")
             listEmail.append(word)
 if listEmail:
